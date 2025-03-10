@@ -12,9 +12,20 @@ body{
     font-family: Arial, sans-serif;
     margin: auto;
     padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    display: grid;
+    grid-template-areas:
+    'header header'
+    'menu main'
+    'footer footer';
+    gap: 20px;
 }
 
 header{
+    grid-area: header;
     position:sticky;
 }
 
@@ -62,18 +73,13 @@ li a.active::before {
 }
 
 #hero{
+    grid-area: menu;
     display: grid;
     place-items: center;
     text-align: center;
 }
 
-section{
-    display: grid;
-    place-items: center;
-    padding: 5% 10%;
-    text-align: center;
-    height: 100dvb
-}
+
 circle{
     fill:black;
     display: block;
@@ -104,6 +110,26 @@ svg path {
     animation: reveal 3.5s;
     font-size: 2em;
 }
+
+section{
+    display: grid;
+    place-items: center;
+    padding: 5% 10%;
+    text-align: center;
+    height: 100dvb
+}
+.item4, .item5, .item6{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+    display: grid;
+    place-items: center;
+    padding: 1% 10%;
+    text-align: center;
+    background-color: var(--bg_color_other);
+}
 @keyframes reveal {
 	from {
         width: 0%;		
@@ -116,6 +142,6 @@ section:nth-child(odd){
     background-color: var(--bg_color_other);
 }
 
-@media only screen and (max-width: 300px){
+/* @media only screen and (max-width: 300px){
 
-}
+} */
