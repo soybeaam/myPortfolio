@@ -1,0 +1,112 @@
+:root{
+    --bg_color_default: #1f1f1f;
+    --bg_color_other: #333;
+    --text-color: #f0f0f0;
+    --template-color: #322d53;
+    --template-color-hover: #7768ff;
+}
+
+body{
+    background-color: var(--bg_color_default);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 0;
+}
+
+header{
+    position:sticky;
+}
+
+nav{
+    display: grid;
+    padding: 1% 10% 0% 10%;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li a{
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+li a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--template-color-hover);
+    box-shadow: 0px 5px 12px rgb(128, 43, 255);
+    transition: width 0.4s ease, left 0.4s ease;
+    transform: translateX(-50%);
+}
+
+li a:hover::before {
+    width: 100%;
+    left: 50%;
+}
+
+li a.active::before {
+    width: 100%;
+    left: 50%;
+}
+
+#hero{
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+section{
+    display: grid;
+    place-items: center;
+    padding: 5% 10%;
+    text-align: center;
+    height: 100dvb
+}
+circle{
+    fill:black;
+    display: block;
+}
+.svg{
+    background-color: wheat;    
+    display: block;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+svg path {
+    stroke: var(--text-color);
+    fill: none;
+    stroke-width: 20px;
+}
+
+.open{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: reveal 3.5s;
+    font-size: 2em;
+}
+@keyframes reveal {
+	from {
+        width: 0%;		
+	}
+	to {
+        width: 100%;		
+	}
+}
+section:nth-child(odd){
+    background-color: var(--bg_color_other);
+}
