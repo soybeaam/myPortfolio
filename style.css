@@ -116,9 +116,6 @@ section:nth-child(odd){
     background-color: var(--bg_color_other);
 }
 
-@media screen { width: 768px } {
-    * {
-        scale: 0.8;
-    }
-    
+@media only screen and (max-width: 300px){
+
 }
