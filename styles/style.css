@@ -1,0 +1,138 @@
+
+
+.item1{
+    grid-area: header;
+    top:0;
+    position: sticky;
+    height: 70px;
+    display: flex;
+    justify-content: end;
+    background-color: var(--bg_color_other);
+    border-radius: 50px 0px 0px 0px;
+}
+
+.item1 nav{
+    display: grid;
+    padding: 1% 10% 0% 10%;
+    margin-right: 0%;
+}
+.item1 ul{
+    display: flex;
+    gap: 4em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.item1 li a{
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.item1 li a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--template-color-hover);
+    box-shadow: 0px 5px 12px rgb(128, 43, 255);
+    transition: width 0.4s ease, left 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.item1 li a:hover::before {
+    width: 100%;
+    left: 50%;
+}
+
+.item1 li a.active::before {
+    width: 100%;
+    left: 50%;
+}
+
+.item2{
+    grid-area: menu;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 260px; /* width of the sidebar */
+    height: 100vh; /* full height of the viewport */
+    background-color: var(--bg_color_menu);
+}
+
+.item2 ul{
+    list-style: none;
+    text-align: start;
+}
+
+circle{
+    fill:black;
+    display: block;
+}
+
+.svg{
+    position: relative;
+    display: block;
+    padding: 20%
+}
+svg{
+    min-width: 200px;
+    width:95%;
+    height:95%;
+    background-color: black; 
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    border: solid 1px var(--text-color);
+    box-shadow: 0px 0px 50px 5px var(--template-color-hover); 
+}
+svg path {
+    stroke: var(--text-color);
+    fill: none;
+    stroke-width: 20px;
+}
+
+.open{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: reveal 3.5s;
+    font-size: 2em;
+}
+
+section{
+    display: grid;
+    place-items: center;
+    padding: 5% 10%;
+    text-align: center;
+    height: 100dvb
+}
+
+.mainContainer{
+    grid-area: main;
+}
+
+
+footer{
+    display: grid;
+    place-items: center;
+    grid-area: footer;
+    height: 30px;
+    text-align: center;
+    background-color: var(--bg_color_other);
+}
+@keyframes reveal {
+	from {
+        width: 0%;		
+	}
+	to {
+        width: 100%;		
+	}
+}
+section:nth-child(odd){
+    background-color: var(--bg_color_other);
+}
+
